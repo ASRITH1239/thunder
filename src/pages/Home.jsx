@@ -1,11 +1,19 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Shield, Play, BadgeCheck, Clock, Users, Globe, MapPin, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const Home = () => {
     const [heroIdx, setHeroIdx] = useState(0);
     const heroImages = ['/images/hero1.webp', '/images/hero2.webp', '/images/hero3.webp'];
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end start"]
+    });
+
+    const y1 = useTransform(scrollYProgress, [0, 1], [0, 300]);
+    const op = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -15,7 +23,7 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="bg-black">
+        <div ref={containerRef} className="bg-black">
             {/* SECTION 1 — HERO */}
             <section className="relative h-screen flex items-center justify-center overflow-hidden bg-zinc-950">
                 <div className="absolute inset-0 z-0">
@@ -36,14 +44,12 @@ const Home = () => {
 
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
+                        style={{ y: y1, opacity: op }}
                     >
                         <span className="section-label">
                             Bengaluru's #1 Screen Protection
                         </span>
-                        <h1 className="heading-hero mb-6">
+                        <h1 className="heading-hero mb-6 text-shimmer">
                             YOUR PHONE IS <br />
                             <span className="text-white">UNBREAKABLE.</span>
                         </h1>
@@ -141,6 +147,7 @@ const Home = () => {
                                 src="/images/features.jpeg"
                                 alt="Thunder Unbreakable Features"
                                 className="relative z-10 w-full max-h-[70vh] object-cover rounded-soft transition-all duration-1000 shadow-2xl border border-white/5"
+                                style={{ filter: 'url(#liquid-filter)' }}
                             />
                         </motion.div>
                     </div>
@@ -162,6 +169,7 @@ const Home = () => {
                                 src="/images/skins.jpeg"
                                 alt="Multi-Device Skins"
                                 className="w-full max-h-[70vh] object-cover rounded-soft shadow-2xl border border-white/5"
+                                style={{ filter: 'url(#liquid-filter)' }}
                             />
                         </motion.div>
 
@@ -203,14 +211,14 @@ const Home = () => {
                         ].map((product, idx) => (
                             <motion.div
                                 key={idx}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 }}
-                                className="card-premium group rounded-soft"
+                                transition={{ delay: idx * 0.1, duration: 0.8 }}
+                                className="card-premium h-full group rounded-soft border border-white/5 hover:border-white/20 transition-colors"
                             >
                                 <div className="aspect-square mb-6 overflow-hidden bg-black rounded-soft">
-                                    <img src={product.img} alt={product.name} className="w-full h-full object-cover transition-all duration-1000" />
+                                    <img src={product.img} alt={product.name} className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110" />
                                 </div>
                                 <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{product.name}</h3>
                                 <div className="flex flex-wrap gap-2 mb-6">
@@ -438,6 +446,7 @@ const Home = () => {
                                 src="/images/technician.jpeg"
                                 alt="Expert Installation"
                                 className="relative z-10 rounded-soft max-h-[70vh] w-full object-cover shadow-2xl border border-white/5"
+                                style={{ filter: 'url(#liquid-filter)' }}
                             />
                         </motion.div>
                     </div>

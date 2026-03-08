@@ -10,6 +10,8 @@ import About from './pages/About';
 import FAQ from './pages/FAQ';
 import Location from './pages/Location';
 import Contact from './pages/Contact';
+import GrainOverlay from './components/GrainOverlay';
+import StormBackground from './components/StormBackground';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -53,7 +55,9 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen bg-thunder-black">
+      <div className="flex flex-col min-h-screen bg-black relative selection:bg-white selection:text-black">
+        <StormBackground />
+        <GrainOverlay />
         <Navbar />
         <main className="flex-grow">
           <Routes>

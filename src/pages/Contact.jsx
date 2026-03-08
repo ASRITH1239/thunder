@@ -20,9 +20,9 @@ const Contact = () => {
     return (
         <div className="bg-black pt-20">
             {/* Hero Header */}
-            <section className="py-24 bg-zinc-950 border-b border-white/5">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h1 className="heading-section text-center mx-auto mb-6 uppercase">
+            <section className="py-24 bg-zinc-950/20 border-b border-white/5">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center uppercase">
+                    <h1 className="heading-section text-center mx-auto mb-6 text-shimmer">
                         BOOK YOUR <span className="text-zinc-500">ARMOUR</span>
                     </h1>
                     <p className="text-zinc-400 md:text-lg">
@@ -93,7 +93,7 @@ const Contact = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1 }}
-                            className="bg-zinc-950 border border-white/5 p-8 md:p-12 rounded-soft"
+                            className="bg-zinc-950/50 backdrop-blur-xl border border-white/5 p-8 md:p-12 rounded-soft h-full"
                         >
                             <h3 className="heading-section text-2xl mb-10 text-left">QUICK <span className="text-zinc-500">BOOKING</span></h3>
                             <form onSubmit={handleSubmit} className="space-y-8">
@@ -103,7 +103,7 @@ const Contact = () => {
                                         type="text"
                                         required
                                         placeholder="Enter your name"
-                                        className="w-full bg-black border border-white/5 rounded-apple px-6 py-5 text-white focus:border-white/20 outline-none transition-all placeholder:text-zinc-700"
+                                        className="w-full bg-black/50 border border-white/5 rounded-apple px-6 py-5 text-white focus:border-white/20 outline-none transition-all placeholder:text-zinc-700"
                                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                     />
                                 </div>
@@ -113,7 +113,7 @@ const Contact = () => {
                                         type="tel"
                                         required
                                         placeholder="Enter phone number"
-                                        className="w-full bg-black border border-white/5 rounded-apple px-6 py-5 text-white focus:border-white/20 outline-none transition-all placeholder:text-zinc-700"
+                                        className="w-full bg-black/50 border border-white/5 rounded-apple px-6 py-5 text-white focus:border-white/20 outline-none transition-all placeholder:text-zinc-700"
                                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                                     />
                                 </div>
@@ -123,7 +123,7 @@ const Contact = () => {
                                         type="text"
                                         required
                                         placeholder="e.g. iPhone 16 Pro Max"
-                                        className="w-full bg-black border border-white/5 rounded-apple px-6 py-5 text-white focus:border-white/20 outline-none transition-all placeholder:text-zinc-700"
+                                        className="w-full bg-black/50 border border-white/5 rounded-apple px-6 py-5 text-white focus:border-white/20 outline-none transition-all placeholder:text-zinc-700"
                                         onChange={(e) => setFormData({ ...formData, device: e.target.value })}
                                     />
                                 </div>
@@ -131,7 +131,7 @@ const Contact = () => {
                                     <div className="space-y-3">
                                         <label className="text-zinc-500 text-[10px] uppercase font-bold tracking-widest ml-1">Product</label>
                                         <select
-                                            className="w-full bg-black border border-white/5 rounded-apple px-6 py-5 text-white focus:border-white/20 outline-none transition-all appearance-none"
+                                            className="w-full bg-black/50 border border-white/5 rounded-apple px-6 py-5 text-white focus:border-white/20 outline-none transition-all appearance-none"
                                             onChange={(e) => setFormData({ ...formData, product: e.target.value })}
                                         >
                                             <option>Thunder Unbreakable</option>
@@ -144,7 +144,7 @@ const Contact = () => {
                                     <div className="space-y-3">
                                         <label className="text-zinc-500 text-[10px] uppercase font-bold tracking-widest ml-1">Service</label>
                                         <select
-                                            className="w-full bg-black border border-white/5 rounded-apple px-6 py-5 text-white focus:border-white/20 outline-none transition-all appearance-none"
+                                            className="w-full bg-black/50 border border-white/5 rounded-apple px-6 py-5 text-white focus:border-white/20 outline-none transition-all appearance-none"
                                             onChange={(e) => setFormData({ ...formData, serviceType: e.target.value })}
                                         >
                                             <option>Walk-in</option>

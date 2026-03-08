@@ -8,7 +8,7 @@ const About = () => {
             <section className="py-24 bg-zinc-950 border-b border-white/5 relative overflow-hidden">
                 <div className="absolute inset-0 z-0 bg-white/5 opacity-5" />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                    <h1 className="heading-hero mb-6">
+                    <h1 className="heading-hero mb-6 text-shimmer">
                         BORN IN <span className="text-zinc-500">BENGALURU</span>
                     </h1>
                     <p className="text-zinc-400 max-w-2xl mx-auto text-lg md:text-xl">
@@ -60,7 +60,7 @@ const About = () => {
                             <img
                                 src="/images/technician.jpeg"
                                 alt="Thunder Technician"
-                                className="relative z-10 rounded-soft w-full h-[600px] object-cover"
+                                className="relative z-10 rounded-soft w-full h-[600px] object-cover shadow-2xl"
                             />
                         </motion.div>
                     </div>
@@ -102,7 +102,7 @@ const About = () => {
                                 className="group"
                             >
                                 <div className="aspect-[4/5] mb-6 overflow-hidden rounded-soft bg-zinc-900 border-b border-white/5 transition-all duration-500">
-                                    <img src={member.img} alt={member.name} className="w-full h-full object-cover transition-all duration-1000" />
+                                    <img src={member.img} alt={member.name} className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110" />
                                 </div>
                                 <h4 className="text-white font-bold text-xl mb-1 tracking-tight">{member.name}</h4>
                                 <p className="text-zinc-500 text-[10px] uppercase tracking-widest font-bold">{member.role}</p>

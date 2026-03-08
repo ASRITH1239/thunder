@@ -17,6 +17,36 @@
   body {
     @apply bg-black text-white font-sans antialiased selection:bg-white selection:text-black;
   }
+
+  /* --- God-Level Utilities --- */
+  .text-shimmer {
+    background: linear-gradient(to right,
+        #fff 20%,
+        #71717a 40%,
+        #71717a 60%,
+        #fff 80%);
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s linear infinite;
+  }
+
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
+
+  .glass-card-premium {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
 }
 
 @layer components {

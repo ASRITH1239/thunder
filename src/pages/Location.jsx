@@ -5,9 +5,9 @@ const Location = () => {
     return (
         <div className="bg-black pt-20">
             {/* Hero Header */}
-            <section className="py-24 bg-zinc-950 border-b border-white/5">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h1 className="heading-section mb-6 text-center mx-auto uppercase">
+            <section className="py-24 bg-zinc-950/20 border-b border-white/5">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center uppercase">
+                    <h1 className="heading-section mb-6 text-center mx-auto text-shimmer">
                         VISIT THE <span className="text-zinc-500">STORE</span>
                     </h1>
                     <p className="text-zinc-400 md:text-lg">
@@ -97,22 +97,24 @@ const Location = () => {
                             transition={{ duration: 1 }}
                             className="space-y-8"
                         >
-                            <div className="aspect-square bg-zinc-950 overflow-hidden relative group">
-                                <img
-                                    src="/images/store.jpeg"
-                                    alt="Kammanahalli Store Exterior"
-                                    className="w-full h-full object-cover rounded-soft transition-opacity duration-1000"
-                                />
-                                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                    <div className="bg-white p-4 rounded-full shadow-2xl">
-                                        <MapPin className="text-black w-8 h-8" />
+                            <div className="aspect-square">
+                                <div className="h-full bg-zinc-950 overflow-hidden relative group rounded-soft">
+                                    <img
+                                        src="/images/store.jpeg"
+                                        alt="Kammanahalli Store Exterior"
+                                        className="w-full h-full object-cover transition-opacity duration-1000 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                        <div className="bg-white p-4 rounded-full shadow-2xl">
+                                            <MapPin className="text-black w-8 h-8" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-2 gap-4">
-                                <img src="/images/store1.jpeg" alt="Store Side View" className="rounded-soft aspect-video object-cover transition-all duration-1000" />
-                                <img src="/images/technician.jpeg" alt="Technician Workspace" className="rounded-soft aspect-video object-cover transition-all duration-1000" />
+                                <img src="/images/store1.jpeg" alt="Store Side View" className="rounded-soft aspect-video object-cover shadow-xl" />
+                                <img src="/images/technician.jpeg" alt="Technician Workspace" className="rounded-soft aspect-video object-cover shadow-xl" />
                             </div>
                         </motion.div>
                     </div>
