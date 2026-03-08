@@ -364,7 +364,7 @@ const Home = () => {
                             <img
                                 src="/images/privacy.png"
                                 alt="Thunder Privacy Features"
-                                className="rounded-soft w-full h-48 object-cover shadow-2xl border border-white/5 mt-auto"
+                                className="rounded-soft w-full h-80 object-contain shadow-2xl border border-white/5 mt-auto bg-zinc-900/50"
                             />
                         </motion.div>
 
@@ -385,7 +385,7 @@ const Home = () => {
                             <img
                                 src="/images/phonesbackcases.avif"
                                 alt="iPhone Back Cases Variety"
-                                className="rounded-soft w-full h-48 object-cover shadow-2xl border border-white/5 mt-auto"
+                                className="rounded-soft w-full h-80 object-contain shadow-2xl border border-white/5 mt-auto bg-white/5"
                             />
                         </motion.div>
                     </div>
